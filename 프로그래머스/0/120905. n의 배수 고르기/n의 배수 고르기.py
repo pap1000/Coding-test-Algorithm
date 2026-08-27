@@ -1,2 +1,2 @@
 def solution(n, numlist):
-    return [num for num in numlist if num%n == 0]
+    return list(filter(lambda x: x%n==0, numlist))

@@ -1,8 +1,9 @@
 def solution(s):
     answer = 0
-    for i, c in enumerate(s.split()):
+    word = s.split()
+    for i, c in enumerate(word):
         if c != 'Z':
             answer += int(c)
         else:
-            answer -= int(s.split()[i-1])
+            answer -= int(word[i-1])
     return answer

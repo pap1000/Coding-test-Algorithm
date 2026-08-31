@@ -1,10 +1,10 @@
 # [level 0] 등수 매기기 - 120882 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120882) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120882?language=python3) 
 
 ### 성능 요약
 
-메모리: 11.4 MB, 시간: 0.03 ms
+메모리: 11.4 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 08월 31일 14:26:10
+2026년 08월 31일 14:29:43
 
 ### 문제 설명
 

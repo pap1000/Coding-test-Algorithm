@@ -1,5 +1,4 @@
 def solution(n):
-    answer = [[]]
     def dfs(n, start, via, end):
         if n == 1:
             return [[start, end]]

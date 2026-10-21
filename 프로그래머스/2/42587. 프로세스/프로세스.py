@@ -3,7 +3,6 @@ from collections import deque
 def solution(priorities, location):
     queue = [(i, prior) for i, prior in enumerate(priorities)]
     answer = 0
-    #print(queue)
     
     while queue:
         curr = queue.pop(0)

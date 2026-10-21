@@ -1,16 +1,16 @@
 from collections import deque
 
 def solution(priorities, location):
-    q1 = deque([(i, prior) for i, prior in enumerate(priorities)])
-    q2 = deque(sorted(priorities, reverse=True))
-    count = 0
+    queue = [(i, prior) for i, prior in enumerate(priorities)]
+    answer = 0
+    #print(queue)
     
-    while(q1):
-        if q1[0][1] == q2[0]:
-            count += 1
-            idx, _ = q1.popleft()
-            q2.popleft()
-            if idx == location:
-                return count
+    while queue:
+        curr = queue.pop(0)
+        if any(curr[1] < q[1] for q in queue):  # 더 높은 우선순위가 있는 경우
+            queue.append(curr)
         else:
-            q1.append(q1.popleft())
+            answer += 1
+            if curr[0] == location: # 찾던 index인 경우
+                return answer
+    

@@ -6,15 +6,27 @@ def solution(n, works):
     answer = 0
     remain = n
     works_count = Counter(works)
+    prior = sorted(works_count)
     
-    while remain:
-        curr = max(works_count)
+    while remain > 0:
+        curr = prior[-1]
+        next_w = prior[-2] if len(prior) > 1 else 0
         curr_work = works_count[curr]
-        works_count[curr] = max(0, curr_work - remain)
-        if not works_count[curr]:
-            works_count.pop(curr)
-        works_count[curr - 1] += min(curr_work, remain)
-        remain = max(0, remain - curr_work)
+        time = (curr - next_w) * curr_work
+
+        if time <= remain:
+            remain -= time
+            prior.pop()
+            del works_count[curr]
+            works_count[next_w] += curr_work
+        else:
+            q, r = divmod(remain, curr_work)
+            
+            del works_count[curr]
+            works_count[curr - q] += curr_work - r
+            works_count[curr - q -1] += r
+            break
+            
     
     for time, count in works_count.items():
         answer += (time ** 2) * count

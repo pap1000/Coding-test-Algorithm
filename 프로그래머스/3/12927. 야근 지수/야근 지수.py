@@ -17,7 +17,6 @@ def solution(n, works):
         remain = max(0, remain - curr_work)
     
     for time, count in works_count.items():
-        for i in range(count):
-            answer += time ** 2
+        answer += (time ** 2) * count
         
     return answer

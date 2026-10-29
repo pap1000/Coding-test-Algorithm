@@ -1,9 +1,12 @@
+from collections import defaultdict
+
 def solution(clothes):
     answer = 1
-    count_part = {}
-    for _, part in clothes:
-        count_part[part] = count_part.get(part, 0) + 1
-    for key in count_part:
-        answer *= count_part[key]+1
+    category = defaultdict(list)
+    for clothe, part in clothes:
+        category[part].append(clothe)
     
-    return answer-1
+    for cate in category:
+        answer *= (len(category[cate]) + 1)
+        
+    return answer - 1

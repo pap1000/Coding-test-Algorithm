@@ -1,0 +1,14 @@
+T = 10
+for test_case in range(1, T + 1):
+    NUM = int(input())
+    my_str = input()
+    full_str = input()
+    n = len(my_str)
+    m = len(full_str)
+    answer = 0
+    
+    for i in range(m - n + 1):
+        if full_str[i:i+n] == my_str:
+            answer += 1
+            
+    print(f"#{NUM} {answer}")

@@ -1,0 +1,13 @@
+def multi(a, b):
+    return a * b
+
+for _ in range(10):
+    T_N = int(input())
+    N, M = map(int, input().split())
+    
+    answer = N
+    while M> 1:
+        answer = multi(answer, N)
+        M -= 1
+    
+    print(f"#{T_N} {answer}")
